@@ -1,3 +1,5 @@
-NLPTest:testContributeLowAmt() (gas: 257060)
-NLPTest:testNormalSwapHiAmt() (gas: 238619)
-NLPTest:testNormalSwapLowAmt() (gas: 238700)
+NLPTest:testContributeLowAmt() (gas: 257296)
+NLPTest:testNormalSwapHiAmt() (gas: 238929)
+NLPTest:testNormalSwapLowAmt() (gas: 238979)
+NLPTest:testSwapBelowMinOut() (gas: 134301)
+NLPTest:testSwapWithMinOut() (gas: 140183)

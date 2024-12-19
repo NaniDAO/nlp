@@ -1,13 +1,15 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 pragma solidity ^0.8.19;
 
+/// @notice NANI SWAP FEELESS WIN
+/// @author z0r0z.eth for NANI LP
+/// @dev Always ensure protection
 contract NSFW {
-    address constant NANI = 0x00000000000007C8612bA63Df8DdEfD9E6077c97; // token0
-    address constant WETH = 0x4200000000000000000000000000000000000006; // token1
-    address constant LP = 0xB1CcEa7c214F8848B5Ae7F86218E25563f557bB3; // nanilp
+    address constant NANI = 0x00000000000007C8612bA63Df8DdEfD9E6077c97;
+    address constant WETH = 0x4200000000000000000000000000000000000006;
+    address constant LP = 0xB1CcEa7c214F8848B5Ae7F86218E25563f557bB3;
 
-    uint160 internal constant MAX_SQRT_RATIO_MINUS_ONE =
-        1461446703485210103287273052203988822378723970341;
+    uint160 constant MAX_SQRT_RATIO_MINUS_ONE = 1461446703485210103287273052203988822378723970341;
 
     constructor() payable {}
 
@@ -16,7 +18,7 @@ contract NSFW {
     function swap(address to, uint256 minOut) public payable {
         (int256 amount0,) =
             ISwap(LP).swap(to, false, int256(msg.value), MAX_SQRT_RATIO_MINUS_ONE, "");
-        if (uint256(amount0) < minOut) revert InsufficientOut();
+        if (uint256(-(amount0)) < minOut) revert InsufficientOut();
     }
 
     fallback() external payable {

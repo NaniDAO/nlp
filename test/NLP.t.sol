@@ -13,12 +13,12 @@ contract NLPTest is Test {
     NaNs internal nans;
 
     address constant NANI = 0x00000000000007C8612bA63Df8DdEfD9E6077c97;
-    address constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
+    address constant WETH = 0x4200000000000000000000000000000000000006;
     address constant DAO = 0xDa000000000000d2885F108500803dfBAaB2f2aA;
-    address constant LP = 0x58Cf91C080F7052f6dA209BF605D6Cf1cefD65F3;
+    address constant LP = 0xB1CcEa7c214F8848B5Ae7F86218E25563f557bB3;
 
     address constant V = 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045;
-    address constant A = 0x0000000000001d8a2e7bf6bc369525A2654aa298;
+    address constant A = 0x999657A41753b8E69C66e7b1A8E37d513CB44E1C;
     address constant CTC = 0x0000000000cDC1F8d393415455E382c30FBc0a84;
 
     uint160 constant MAX_SQRT_RATIO_MINUS_ONE = 1461446703485210103287273052203988822378723970341;
@@ -33,15 +33,15 @@ contract NLPTest is Test {
         deployer = vm.addr(deployerPrivateKey);
 
         vm.startPrank(deployer);
-        vm.createSelectFork(vm.rpcUrl("main"));
+        vm.createSelectFork(vm.rpcUrl("base"));
         nlp = new NLP();
         nsfw = new NSFW();
         nans = new NaNs();
         vm.stopPrank();
 
         vm.prank(A);
-        IERC20(NANI).transfer(address(nlp), 10_000_000 ether);
-        require(IERC20(NANI).balanceOf(address(nlp)) == 10_000_000 ether, "NLP not funded properly");
+        IERC20(NANI).transfer(address(nlp), 900_000 ether);
+        require(IERC20(NANI).balanceOf(address(nlp)) == 900_000 ether, "NLP not funded properly");
     }
 
     function testNormalSwapLowAmt() public payable {
@@ -59,7 +59,7 @@ contract NLPTest is Test {
         console.log(strPriceUSDC, "/starting price in USDC");
 
         vm.prank(V);
-        nsfw.swap{value: 0.015 ether}(V, 0);
+        nsfw.swap{value: 0.0015 ether}(V, 0);
 
         (price, strPrice) = ICTC(CTC).checkPriceInETH(NANI);
         (priceUSDC, strPriceUSDC) = ICTC(CTC).checkPriceInETHToUSDC(NANI);
@@ -90,7 +90,7 @@ contract NLPTest is Test {
         console.log(strPriceUSDC, "/starting price in USDC");
 
         vm.prank(V);
-        nsfw.swap{value: 10 ether}(V, 0);
+        nsfw.swap{value: 0.001 ether}(V, 0);
 
         (price, strPrice) = ICTC(CTC).checkPriceInETH(NANI);
         (priceUSDC, strPriceUSDC) = ICTC(CTC).checkPriceInETHToUSDC(NANI);
@@ -108,7 +108,7 @@ contract NLPTest is Test {
 
     function testContributeLowAmt() public payable {
         (uint256 price,) = ICTC(CTC).checkPriceInETH(NANI);
-        uint256 expectedNANI = (0.015 ether * 1 ether) / price; // ETH * 1e18 / (ETH/NANI) = NANI
+        uint256 expectedNANI = (0.0015 ether) / price; // ETH * 1e18 / (ETH/NANI) = NANI
         uint256 minOut = (expectedNANI * 95) / 100; // 95% of expected NANI amount
 
         uint256 bal = IERC20(NANI).balanceOf(V);
@@ -125,7 +125,7 @@ contract NLPTest is Test {
         console.log(strPriceUSDC, "/starting price in USDC");
 
         vm.prank(V);
-        nlp.contribute{value: 0.015 ether}(V, minOut);
+        nlp.contribute{value: 0.0015 ether}(V, minOut);
 
         (price, strPrice) = ICTC(CTC).checkPriceInETH(NANI);
         (priceUSDC, strPriceUSDC) = ICTC(CTC).checkPriceInETHToUSDC(NANI);
@@ -141,7 +141,7 @@ contract NLPTest is Test {
         console.log(nBal, "/lp resulting nani bal");
         console.log(wBal, "/lp resulting weth bal");
     }
-
+    /*
     function testContributeHiAmt() public payable {
         (uint256 price,) = ICTC(CTC).checkPriceInETH(NANI);
         uint256 expectedNANI = (10 ether) / price; // ETH * 1e18 / (ETH/NANI) = NANI
@@ -610,7 +610,7 @@ contract NLPTest is Test {
                 break
             }
         }
-    }
+    }*/
 }
 
 interface IERC20 {

@@ -3,8 +3,8 @@ pragma solidity ^0.8.19;
 
 contract NSFW {
     address constant NANI = 0x00000000000007C8612bA63Df8DdEfD9E6077c97; // token0
-    address constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2; // token1
-    address constant LP = 0x58Cf91C080F7052f6dA209BF605D6Cf1cefD65F3; // nanilp
+    address constant WETH = 0x4200000000000000000000000000000000000006; // token1
+    address constant LP = 0xB1CcEa7c214F8848B5Ae7F86218E25563f557bB3; // nanilp
 
     uint160 internal constant MAX_SQRT_RATIO_MINUS_ONE =
         1461446703485210103287273052203988822378723970341;

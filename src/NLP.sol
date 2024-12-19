@@ -6,10 +6,10 @@ pragma solidity ^0.8.19;
 /// @custom:coauthor tabish.eth (lottery magick)
 contract NLP {
     address constant NANI = 0x00000000000007C8612bA63Df8DdEfD9E6077c97;
-    address constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
+    address constant WETH = 0x4200000000000000000000000000000000000006;
     address constant DAO = 0xDa000000000000d2885F108500803dfBAaB2f2aA;
-    address constant LP = 0x58Cf91C080F7052f6dA209BF605D6Cf1cefD65F3;
-    address constant POS_MNGR = 0xC36442b4a4522E871399CD717aBDD847Ab11FE88;
+    address constant LP = 0xB1CcEa7c214F8848B5Ae7F86218E25563f557bB3;
+    address constant POS_MNGR = 0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1;
 
     uint160 constant MAX_SQRT_RATIO_MINUS_ONE = 1461446703485210103287273052203988822378723970341;
     int24 constant TICK_SPACING = 60; // 0.3% pool.

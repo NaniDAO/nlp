@@ -1,36 +1,37 @@
-# [zenplate](https://github.com/z0r0z/zenplate)  [![License: AGPL-3.0-only](https://img.shields.io/badge/License-AGPL-black.svg)](https://opensource.org/license/agpl-v3/) [![solidity](https://img.shields.io/badge/solidity-%5E0.8.25-black)](https://docs.soliditylang.org/en/v0.8.25/) [![Foundry](https://img.shields.io/badge/Built%20with-Foundry-000000.svg)](https://getfoundry.sh/)
+# [nlp](https://github.com/z0r0z/zenplate)  [![License: AGPL-3.0-only](https://img.shields.io/badge/License-AGPL-black.svg)](https://opensource.org/license/agpl-v3/) [![solidity](https://img.shields.io/badge/solidity-%5E0.8.28-black)](https://docs.soliditylang.org/en/v0.8.28/) [![Foundry](https://img.shields.io/badge/Built%20with-Foundry-000000.svg)](https://getfoundry.sh/)
 
-Simpler foundry template.
+nani liquidity provisioning mechanisms to economically program disindividuation through personalized incentives
+
+## deployments (ethereum & base)
+
+### nlpz
+> nani lp zap
+[0x00000000009dd395f34af45f053fbaa1f01058ef](https://etherscan.io/address/0x00000000009dd395f34af45f053fbaa1f01058ef)
+> > initialize liquidity with nani tokens sold for current pool price
+
+Users can contribute ETH to receive the market equivalent in NANI and become LPs using a gas-efficient contract.
+
+They can select between `contribute()` which selects a +-10% range at current price, or `contributeFullRange()`.
+
+### nlp
+> nani lp
+[0x0000000000009c88187c39291c0aae2be063be95](https://etherscan.io/address/0x0000000000009c88187c39291c0aae2be063be95)
+> > acc liquidity and price dynamic in pseudorandom discount
+
+Users can participate in a novel liquidity mechanism that uses `randomish()` function to give 5-33% discount.
+
+However, there is 50% chance of just swapping. If LP lottery is won, 80% goes into LP and 20% goes into swap.
+
+### nsfw
+> nani swap feeless win
+[0x00000000003390f89025aE80E376116eBFA0Cf6b](https://etherscan.io/address/0x00000000003390f89025aE80E376116eBFA0Cf6b)
+> > swap for nani at the current pool price without uniswap frontend fee- nice
 
 ## Getting Started
-
-Click [`use this template`](https://github.com/z0r0z/zenplate/generate) to start.
 
 Run: `curl -L https://foundry.paradigm.xyz | bash && source ~/.bashrc && foundryup`
 
 Build the foundry project with `forge build`. Run tests with `forge test`. Measure gas with `forge snapshot`. Format with `forge fmt`.
-
-## GitHub Actions
-
-Contracts will be tested and gas measured on every push and pull request.
-
-You can edit the CI script in [.github/workflows/ci.yml](./.github/workflows/ci.yml).
-
-## Blueprint
-
-```txt
-lib
-├─ forge-std — https://github.com/foundry-rs/forge-std
-src
-├─ Tester — Tester Contract
-test
-└─ Tester.t - Test Contract
-```
-
-## Notable Mentions
-
-- [femplate](https://github.com/refcell/femplate)
-- [prb-foundry-template](https://github.dev/PaulRBerg/foundry-template)
 
 ## Disclaimer
 

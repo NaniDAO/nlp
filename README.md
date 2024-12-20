@@ -4,8 +4,8 @@ nani liquidity provisioning mechanisms to economically program disindividuation 
 
 ## deployments (ethereum & base)
 
-### nlpz
-> nani lp zap
+### nlpz (nanilpzap.eth | nanilpzap.base.eth)
+> nani lp zap (nanilpzap.eth | nanilpzap.base.eth)
 [0x00000000009dd395f34af45f053fbaa1f01058ef](https://etherscan.io/address/0x00000000009dd395f34af45f053fbaa1f01058ef)
 > > initialize liquidity with nani tokens sold for current pool price
 
@@ -13,7 +13,7 @@ Users can contribute ETH to receive the market equivalent in NANI and become LPs
 
 They can select between `contribute()` which selects a +-10% range at current price, or `contributeFullRange()`.
 
-### nlp
+### nlp (nanilp.eth | nanilp.base.eth)
 > nani lp
 [0x0000000000009c88187c39291c0aae2be063be95](https://etherscan.io/address/0x0000000000009c88187c39291c0aae2be063be95)
 > > acc liquidity and price dynamic in pseudorandom discount
@@ -22,7 +22,7 @@ Users can participate in a novel liquidity mechanism that uses `randomish()` fun
 
 However, there is 50% chance of just swapping. If LP lottery is won, 80% goes into LP and 20% goes into swap.
 
-### nsfw
+### nsfw (naniswap.eth | naniswap.base.eth)
 > nani swap feeless win
 [0x00000000003390f89025aE80E376116eBFA0Cf6b](https://etherscan.io/address/0x00000000003390f89025aE80E376116eBFA0Cf6b)
 > > swap for nani at the current pool price without uniswap frontend fee- nice

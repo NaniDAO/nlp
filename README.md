@@ -27,6 +27,22 @@ However, there is 50% chance of just swapping. If LP lottery is won, 80% goes in
 [0x00000000003390f89025aE80E376116eBFA0Cf6b](https://etherscan.io/address/0x00000000003390f89025aE80E376116eBFA0Cf6b)
 > > swap for nani at the current pool price without uniswap frontend fee- nice
 
+## phase 0 (2666664, 0.2666664%)
+> validation of nlp mechanisms
+>> for security purposes, low
+
+### main
+
+> nlp: 999,999
+
+> nlpz: 777,777
+
+### base
+
+> nlp: 444,444
+
+> nlpz: 444,444
+
 ## Getting Started
 
 Run: `curl -L https://foundry.paradigm.xyz | bash && source ~/.bashrc && foundryup`

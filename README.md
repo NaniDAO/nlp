@@ -4,25 +4,18 @@ nani liquidity provisioning mechanisms to economically program disindividuation 
 
 ## deployments (ethereum & base)
 
-### nlpz (nanilpzap.eth | nanilpzap.base.eth)
+### nlpz (nanilpzap.eth | nanilpzap.base.eth): *LP*
 > nani lp zap (nanilpzap.eth | nanilpzap.base.eth)
-[0x00000000009dd395f34af45f053fbaa1f01058ef](https://etherscan.io/address/0x00000000009dd395f34af45f053fbaa1f01058ef)
+[0x0000000000610170918fE0D185251953deC90526](https://etherscan.io/address/0x0000000000610170918fE0D185251953deC90526)
 > > initialize liquidity with nani tokens sold for current pool price
 
 Users can contribute ETH to receive the market equivalent in NANI and become LPs using a gas-efficient contract.
 
 They can select between `contribute()` which selects a +-10% range at current price, or `contributeFullRange()`.
 
-### nlp (nanilp.eth | nanilp.base.eth)
-> nani lp
-[0x0000000000009c88187c39291c0aae2be063be95](https://etherscan.io/address/0x0000000000009c88187c39291c0aae2be063be95)
-> > acc liquidity and price dynamic in pseudorandom discount
+Timelock is initially set for 3 weeks under DAO admin. This can be adjusted. Additional incentives are available.
 
-Users can participate in a novel liquidity mechanism that uses `randomish()` function to give 5-33% discount.
-
-However, there is 50% chance of just swapping. If LP lottery is won, 80% goes into LP and 20% goes into swap.
-
-### nsfw (naniswap.eth | naniswap.base.eth)
+### nsfw (naniswap.eth | naniswap.base.eth): *SWAP*
 > nani swap feeless win
 [0x00000000003390f89025aE80E376116eBFA0Cf6b](https://etherscan.io/address/0x00000000003390f89025aE80E376116eBFA0Cf6b)
 > > swap for nani at the current pool price without uniswap frontend fee- nice
@@ -31,17 +24,9 @@ However, there is 50% chance of just swapping. If LP lottery is won, 80% goes in
 > validation of nlp mechanisms
 >> for security purposes, low
 
-### main
-
-> nlp: 999,999
-
-> nlpz: 777,777
-
-### base
-
-> nlp: 444,444
-
-> nlpz: 444,444
+>> ## phase 1 (222222, 0.0222222000222222%)
+> continuation of nlp mechanisms
+>> for security purposes, vlow
 
 ## Getting Started
 
